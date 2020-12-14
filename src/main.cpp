@@ -34,6 +34,7 @@ int main() {
                 break;
             case 2:
                 /* code */
+                
                 puts("");
                 break;
             case 3:
