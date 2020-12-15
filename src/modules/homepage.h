@@ -5,15 +5,15 @@
 #define ENTER printf("Press enter to continue...")
 
 struct Recipes {
-  char description[255];
-  char instructions[555];
-  char ingridient[555];
+    char description[255];
+    char instructions[555];
+    char ingridient[555];
 };
 struct Node {
-  char name[255];
-  Recipes recipes;
-  int sumCooked;
-  Node* next;
+    char name[255];
+    Recipes recipes;
+    int sumCooked;
+    Node* next;
 } *base;
 
 void close();
