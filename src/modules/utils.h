@@ -1,6 +1,9 @@
 #ifndef MOD_UTILS_H
 #define MOD_UTILS_H
 
+#define CLEAR system("cls||clear")
+#define ENTER printf("Press enter to continue...")
+
 #include <time.h>
 
 /* Utility stuff */

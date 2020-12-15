@@ -1,9 +1,6 @@
 #ifndef MOD_HOMEPAGE_H
 #define MOD_HOMEPAGE_H
 
-#define CLEAR system("cls||clear")
-#define ENTER printf("Press enter to continue...")
-
 struct Recipes {
     char description[255];
     char instructions[555];

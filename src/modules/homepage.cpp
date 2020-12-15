@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "homepage.h"
+#include "utils.h"
 
 void close() {
     ENTER;
