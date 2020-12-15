@@ -9,6 +9,8 @@
 #include "homepage.h"
 #include "utils.h"
 
+Node *homepageBase;
+
 void close() {
     ENTER;
     getchar();
@@ -92,15 +94,15 @@ void homePage() {
             char name[255];
             printf("Input recipes name: ");
             scanf("%[^\n]", name); getchar();
-            searchRecipes(base, name);
+            searchRecipes(homepageBase, name);
         }
         else if (choise == 2) {
             CLEAR;
-            if (!base) {
+            if (!homepageBase) {
                 puts("No Recipes Yet!");
             }
             else {
-                showPreferences(base);
+                showPreferences(homepageBase);
             }
         }
         else if (choise == 3) {

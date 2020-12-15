@@ -11,7 +11,7 @@ struct Node {
     Recipes recipes;
     int sumCooked;
     Node* next;
-} *base;
+};
 
 void close();
 void homePage();
