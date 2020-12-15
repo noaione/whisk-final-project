@@ -58,6 +58,47 @@ void add_recipe() {
     getchar();
 }
 
+int viewCookbook() {
+    if (!head) {
+        puts("There's no recipe saved.");
+        return 0;
+    }
+    curr = head;
+    int numbering = 1;
+    int total = 0;
+    while (curr) {
+        printf("%d. %s", numbering, curr->lists->title);
+        total++;
+        numbering++;
+        curr = curr->next;
+    }
+    curr = head;
+    // N4O: return total for easier counting :)
+    return total;
+}
+
+// TODO: Rename function
+Cookbook *yoinkCookbookTutorial(int position) {
+    if (!head) {
+        return NULL;
+    }
+    curr = head;
+    int iteration = 0;
+    for (iteration; iteration < position; iteration++) {
+        if (!curr) {
+            break;
+        }
+        curr = curr->next;
+    }
+    if (iteration != position) {
+        return NULL;
+    }
+    if (!curr) {
+        return NULL;
+    }
+    return curr->lists;
+}
+
 
 void cook_book() {
     bool flag = true;

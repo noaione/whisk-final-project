@@ -11,4 +11,8 @@ struct Cookbook {
 void add_recipe();
 void cook_book();
 
+int viewCookbook();
+// TODO: rename function
+Cookbook *yoinkCookbookTutorial(int position);
+
 #endif /* MOD_COOKBOOK_H */
