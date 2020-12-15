@@ -9,11 +9,6 @@
     A library of users’ saved recipes which could be manually inputted or saved from
     online sources.
 */
-struct Node{
-    Cookbook *lists;
-    Node *next, *prev;
-} *head, *tail, *curr;
-
 
 void *create_recipe(Cookbook *recipe){
     Node *temp = (Node *)malloc(sizeof(Node));

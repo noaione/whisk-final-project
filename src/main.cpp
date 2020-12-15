@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "modules/cookbook.h"
 #include "modules/utils.h"
 #include "modules/homepage.h"
 
@@ -34,8 +34,8 @@ int main() {
                 puts("");
                 break;
             case 2:
-                /* code */
-                
+                system("cls||clear");
+                cook_book();
                 puts("");
                 break;
             case 3:
