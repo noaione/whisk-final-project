@@ -10,10 +10,11 @@
     online sources.
 */
 
-Node* head, * tail, * curr;
+// Renamed because conflict
+CookbookNode* head, * tail, * curr;
 
 void* create_recipe(Cookbook* recipe) {
-    Node* temp = (Node*)malloc(sizeof(Node));
+    CookbookNode* temp = (CookbookNode*)malloc(sizeof(CookbookNode));
     temp->lists = recipe;
     temp->next = temp->prev = NULL;
 

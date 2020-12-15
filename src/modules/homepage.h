@@ -6,18 +6,20 @@ struct Recipes {
     char instructions[555];
     char ingridient[555];
 };
-struct Node {
+
+// Renamed because conflict
+struct HomepageNode {
     char name[255];
     Recipes recipes;
     int sumCooked;
-    Node* next;
+    HomepageNode* next;
 };
 
 void close();
 void homePage();
-void printRecipes(Node* root);
-void searchRecipes(Node* root, char* name);
-int countRecipes(Node* root);
+void printRecipes(HomepageNode* root);
+void searchRecipes(HomepageNode* root, char* name);
+int countRecipes(HomepageNode* root);
 void showPreferences();
 void printHomePage();
 void homePage();

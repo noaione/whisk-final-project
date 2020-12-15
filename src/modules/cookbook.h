@@ -8,9 +8,10 @@ struct Cookbook {
     char* step[255];
 };
 
-struct Node {
+// Renamed because conflict
+struct CookbookNode {
     Cookbook *lists;
-    Node *next, *prev;
+    CookbookNode *next, *prev;
 };
 
 void cook_book();

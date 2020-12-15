@@ -9,7 +9,8 @@
 #include "homepage.h"
 #include "utils.h"
 
-Node *homepageBase;
+// Renamed because conflict
+HomepageNode *homepageBase;
 
 void close() {
     ENTER;
@@ -17,7 +18,7 @@ void close() {
     CLEAR;
 }
 
-void printRecipes(Node* root) {
+void printRecipes(HomepageNode *root) {
     if (!root) {
         puts("Data tidak ditemukan!");
     }
@@ -28,7 +29,7 @@ void printRecipes(Node* root) {
     }
 }
 
-void searchRecipes(Node* root, char* name) {
+void searchRecipes(HomepageNode *root, char* name) {
     if (root) {
         if (!strcmp(root->name, name)) {
             printRecipes(root);
@@ -42,7 +43,7 @@ void searchRecipes(Node* root, char* name) {
     return;
 }
 
-int countRecipes(Node* root) {
+int countRecipes(HomepageNode *root) {
     int i = 0;
     while (root) {
         root->next;
@@ -51,11 +52,11 @@ int countRecipes(Node* root) {
     return i;
 }
 
-void showPreferences(Node* root) {
+void showPreferences(HomepageNode *root) {
     int sumRecipes = countRecipes(root);
     int max[5] = {};
     for (int i = 0; i < 5 && i < sumRecipes; i++) {
-        Node* temp = root;
+        HomepageNode *temp = root;
         while (temp) {
             //printf("%s\n", root->name);
             if (temp->sumCooked > max[i] && (i > 0) ? temp->sumCooked < max[i - 1] : 1) {
@@ -65,7 +66,7 @@ void showPreferences(Node* root) {
         }
     }
     for (int i = 0; i < 5 && i < sumRecipes; i++) {
-        Node* temp = root;
+        HomepageNode *temp = root;
         while (temp) {
             (temp->sumCooked == max[i]) ? printf("%s\n", root->name) : 1;
             temp = temp->next;
