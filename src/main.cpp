@@ -32,7 +32,6 @@ int main() {
         } while (choose_flag < 1 || choose_flag > 5);
         switch (choose_flag) {
             case 1:
-                homePage();
                 puts("");
                 homePage();
                 break;
