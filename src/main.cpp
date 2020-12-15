@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "modules/utils.h"
+#include "modules/homepage.h"
 
 int main() {
     puts("Welcome to Whisk!");
@@ -29,7 +30,7 @@ int main() {
         } while (choose_flag < 1 || choose_flag > 5);
         switch (choose_flag) {
             case 1:
-                /* code */
+                homePage();
                 puts("");
                 break;
             case 2:
