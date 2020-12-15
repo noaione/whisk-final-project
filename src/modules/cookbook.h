@@ -8,11 +8,15 @@ struct Cookbook {
     char* step[255];
 };
 
-void add_recipe();
-void cook_book();
+struct Node {
+    Cookbook *lists;
+    Node *next, *prev;
+};
 
-int viewCookbook();
-// TODO: rename function
-Cookbook *yoinkCookbookTutorial(int position);
+void cook_book();
+void *create_recipe(Cookbook *recipe);
+void add_recipe();
+int view_cookbook(bool show_extra);
+Cookbook* yoinkCookbookTutorial(int position);
 
 #endif /* MOD_COOKBOOK_H */

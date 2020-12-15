@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "modules/homepage.h"
 #include "modules/cookbook.h"
 #include "modules/kitchen.h"
 #include "modules/utils.h"
+#include "modules/homepage.h"
 
 int main() {
     puts("Welcome to Whisk!");
@@ -32,13 +32,14 @@ int main() {
         } while (choose_flag < 1 || choose_flag > 5);
         switch (choose_flag) {
             case 1:
+                homePage();
                 puts("");
                 homePage();
                 break;
             case 2:
+                system("cls||clear");
                 puts("");
                 cook_book();
-                break;
             case 3:
                 puts("");
                 kitchenmenu();

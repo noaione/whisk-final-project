@@ -6,14 +6,11 @@
 
 // Dibutuhkan di sini:
 /*
-    A library of users’ saved recipes which could be manually inputted or saved from
+    A library of users’ saved recipes which could be manually inputted or saved froms
     online sources.
 */
-struct Node {
-    Cookbook* lists;
-    Node* next, * prev;
-} *head, * tail, * curr;
 
+Node* head, * tail, * curr;
 
 void* create_recipe(Cookbook* recipe) {
     Node* temp = (Node*)malloc(sizeof(Node));
@@ -30,6 +27,7 @@ void* create_recipe(Cookbook* recipe) {
     }
 }
 
+int i = 0, j = 0;
 void add_recipe() {
     Cookbook* temp_recipe = (Cookbook*)malloc(sizeof(Cookbook));
     temp_recipe->title = (char*)malloc(sizeof(char));
@@ -37,7 +35,6 @@ void add_recipe() {
     scanf("%[^\n]", temp_recipe->title); getchar();
     //input bahan resep
     puts("Input ingredients [Type \"done\" when done inputting]:");
-    int i = 0;
     while (strcmp(temp_recipe->ingredient[i], "done") == 0) {
         printf("Ingridient no.%d: ", i + 1);
         temp_recipe->ingredient[i] = (char*)malloc(sizeof(temp_recipe->ingredient[i]));
@@ -45,7 +42,6 @@ void add_recipe() {
     }
     //input langkah membuat
     puts("Input process [Type \"done\" when done inputting]:");
-    int j = 0;
     while (strcmp(temp_recipe->step[j], "done") == 0) {
         printf("Step no.%d: ", j + 1);
         temp_recipe->step[j] = (char*)malloc(sizeof(temp_recipe->step[j]));
@@ -58,27 +54,8 @@ void add_recipe() {
     getchar();
 }
 
-int viewCookbook() {
-    if (!head) {
-        puts("There's no recipe saved.");
-        return 0;
-    }
-    curr = head;
-    int numbering = 1;
-    int total = 0;
-    while (curr) {
-        printf("%d. %s", numbering, curr->lists->title);
-        total++;
-        numbering++;
-        curr = curr->next;
-    }
-    curr = head;
-    // N4O: return total for easier counting :)
-    return total;
-}
-
 // TODO: Rename function
-Cookbook *yoinkCookbookTutorial(int position) {
+Cookbook* yoinkCookbookTutorial(int position) {
     if (!head) {
         return NULL;
     }
@@ -99,6 +76,37 @@ Cookbook *yoinkCookbookTutorial(int position) {
     return curr->lists;
 }
 
+int view_cookbook(bool show_extra = true) {
+    int menu;
+    puts("============");
+    puts("|  Recipe  |");
+    puts("============");
+    int i = 0;
+    curr = head;
+    if (!curr) {
+        puts("No Recipe Available");
+        puts("Please Add the Recipe first!");
+        printf("Press enter to continue...");
+        getchar();
+    } else {
+        while (curr) {
+            i += 1;
+            printf("%d. %s\n", i, curr->lists->title);
+            if (show_extra) {
+                puts("Ingredients: ");
+                for (int n = 1; n <= i; n++) {
+                    printf("%d. %s\n", n, curr->lists->ingredient);
+                }
+                puts("Steps: ");
+                for (int n = 1; n <= j; n++) {
+                    printf("%d. %s\n", n, curr->lists->step);
+                }
+            }
+        }
+    }
+    // return total
+    return i;
+}
 
 void cook_book() {
     bool flag = true;
@@ -113,7 +121,7 @@ void cook_book() {
         }
         switch (option) {
         case 1:
-            /* code */
+            view_cookbook();
             break;
 
         case 2:

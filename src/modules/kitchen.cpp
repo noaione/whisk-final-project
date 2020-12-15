@@ -29,9 +29,10 @@ void lets_cook_something_bois(Cookbook *recipe) {
 void kitchenmenu() {
     CLEAR;
     puts("What's poppin today?");
+    puts("");
     int choice = -1;
     // infer from total cookbook.
-    int max = viewCookbook();
+    int max = view_cookbook(false);
     do {
         printf("What do you want to cook today? ");
         scanf("%d", &choice);
