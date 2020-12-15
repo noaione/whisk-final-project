@@ -1,10 +1,11 @@
 #ifndef MOD_UTILS_H
 #define MOD_UTILS_H
 
+#include <time.h>
+#include <stdlib.h>
+
 #define CLEAR system("cls||clear")
 #define ENTER printf("Press enter to continue...")
-
-#include <time.h>
 
 /* Utility stuff */
 void printalot(char ch, int amount, bool new_line);
