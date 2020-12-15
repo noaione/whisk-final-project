@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "modules/homepage.h"
+#include "modules/cookbook.h"
+#include "modules/kitchen.h"
 #include "modules/utils.h"
 
 int main() {
@@ -29,17 +32,16 @@ int main() {
         } while (choose_flag < 1 || choose_flag > 5);
         switch (choose_flag) {
             case 1:
-                /* code */
                 puts("");
+                homePage();
                 break;
             case 2:
-                /* code */
-                
                 puts("");
+                cook_book();
                 break;
             case 3:
-                /* code */
                 puts("");
+                kitchenmenu();
                 break;
             case 4:
                 /* code */
