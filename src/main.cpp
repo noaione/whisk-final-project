@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "modules/utils.h"
+#include "modules/homepage.h"
 
 int main() {
     puts("Welcome to Whisk!");
